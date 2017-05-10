@@ -17,6 +17,10 @@ public class TaskManagerController {
 	
 	TaskManagerService taskmanagerservice=new TaskManagerService();
 	
+	/**
+	 * 
+	 * @return
+	 */
 	 @RequestMapping(value="/tasks",method = RequestMethod.GET,headers="Accept=application/json")
 	 public List<Task> getAllTasks() {	 
 	  List<Task> tasks=taskmanagerservice.getAllTasks();
@@ -24,7 +28,11 @@ public class TaskManagerController {
 	
 	 }
 	 
-	 
+	 /**
+	  * 
+	  * @param taskIds
+	  * @return
+	  */
 	 @RequestMapping(value="/tasks/archive/{taskIds}",method = RequestMethod.POST,headers="Accept=application/json")
 	 public List<Task> archiveAllTasks(@PathVariable int[] taskIds) {	
 		 for(int i=0;i<taskIds.length;i++){
@@ -36,6 +44,13 @@ public class TaskManagerController {
 	
 	 }
 	 
+	 /**
+	  * 
+	  * @param taskId
+	  * @param taskStatus
+	  * @return
+	  * @throws ParseException
+	  */
 	 @RequestMapping(value="/tasks/{taskId}/{taskStatus}",method = RequestMethod.POST,headers="Accept=application/json")
 	 public List<Task> changeTaskStatus(@PathVariable int taskId,@PathVariable String taskStatus) throws ParseException {	
 		 taskmanagerservice.changeTaskStatus(taskId,taskStatus);		 
@@ -43,6 +58,15 @@ public class TaskManagerController {
 		 
 	 }
 	 
+	 /**
+	  * 
+	  * @param taskName
+	  * @param taskDesc
+	  * @param taskPriority
+	  * @param taskStatus
+	  * @return
+	  * @throws ParseException
+	  */
 	 @RequestMapping(value="/tasks/insert/{taskName}/{taskDesc}/{taskPriority}/{taskStatus}",method = RequestMethod.POST,headers="Accept=application/json")
 	 public List<Task> addTask(@PathVariable String taskName,@PathVariable String taskDesc,@PathVariable String taskPriority,@PathVariable String taskStatus) throws ParseException {	
 		Task task = new Task();

@@ -5,9 +5,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>http://localhost:8090/TaskManagerApp/tasks</div>
-<div>http://localhost:8090/TaskManagerApp/tasks/archive/2</div>
-<div>http://localhost:8090/TaskManagerApp/tasks/2/COMPLETED</div>
-<div>http://localhost:8090/TaskManagerApp/tasks/insert/jQueryConcepts/ToLearn/HIGH/ACTIVE</div>
+<div>
+<b>LIST - GET</b><br/>
+http://ec2-52-26-23-157.us-west-2.compute.amazonaws.com:8090/TaskManagerApp/tasks</div>
+<div>
+<b>ARCHIVE - POST - id</b>
+http://ec2-52-26-23-157.us-west-2.compute.amazonaws.com:8090/TaskManagerApp/tasks/archive/2</div>
+<div>
+<b>CHANGE TASK STATUS - POST - id/status</b><br/>
+http://ec2-52-26-23-157.us-west-2.compute.amazonaws.com:8090/TaskManagerApp/tasks/2/COMPLETED</div>
+<div>
+<b>INSERT - POST - name/desc/priority/status</b><br/>
+http://ec2-52-26-23-157.us-west-2.compute.amazonaws.com:8090/TaskManagerApp/tasks/insert/jQuery/Study/MEDIUM/ACTIVE</div>
 </body>
 </html>

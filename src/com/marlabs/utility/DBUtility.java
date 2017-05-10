@@ -18,11 +18,18 @@ import org.hibernate.cfg.Configuration;
 
 import com.marlabs.domain.Task;
 
+/**
+ * @author Nanda
+ *
+ */
 public class DBUtility {
 	private static Connection connection = null;
 
 	SessionFactory sessionFactory;
 
+	/**
+	 * To connect to Hibernate
+	 */
 	public DBUtility() {
 
 		try {
@@ -39,6 +46,10 @@ public class DBUtility {
 		}
 	}
 
+	/**
+	 * To add new task
+	 * @param task
+	 */
 	public void addTask(Task task) {
 		
 		try{
@@ -59,6 +70,10 @@ public class DBUtility {
 
 	}
 	
+	/**
+	 * To archive a completed task
+	 * @param taskId
+	 */
 	public void archiveTask(int taskId) {
 		
 		try{
@@ -83,6 +98,10 @@ public class DBUtility {
 
 	}
 	
+	/**
+	 * To change the task properties
+	 * @param task
+	 */
 	public void updateTask(Task task) {
 		
 		try{
@@ -103,6 +122,11 @@ public class DBUtility {
 		
 	}
 	
+	/**
+	 * To change the task status
+	 * @param taskId
+	 * @param status
+	 */
 	public void changeTaskStatus(int taskId, String status) {
 		
 		try{
@@ -137,6 +161,11 @@ public class DBUtility {
 
 	}
 	
+	/**
+	 * To get the task details
+	 * @param taskId
+	 * @return
+	 */
 	public Task getTaskById(int taskId) {
 		
 		return (Task) sessionFactory.getCurrentSession().get(Task.class, taskId);
