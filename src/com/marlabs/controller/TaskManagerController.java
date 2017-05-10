@@ -21,7 +21,7 @@ public class TaskManagerController {
 	 * 
 	 * @return
 	 */
-	 @RequestMapping(value="/tasks",method = RequestMethod.GET,headers="Accept=application/json")
+	 @RequestMapping(value="/tasks",method = RequestMethod.GET,headers="Accept=application/json,Access-Control-Allow-Origin=*")
 	 public List<Task> getAllTasks() {	 
 	  List<Task> tasks=taskmanagerservice.getAllTasks();
 	  return tasks;
