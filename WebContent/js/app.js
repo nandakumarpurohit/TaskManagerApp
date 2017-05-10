@@ -2,7 +2,7 @@ var taskManagerModule = angular.module('taskManagerApp', ['ngAnimate']);
 
 taskManagerModule.controller('taskManagerController', function ($scope,$http) {
 	
-	var urlBase="http://localhost:8090/TaskManagerApp";
+	var urlBase="http://ec2-52-26-23-157.us-west-2.compute.amazonaws.com:8090/TaskManagerApp";
 	$scope.toggle=true;
 	$scope.selection = [];
 	$scope.statuses=['ACTIVE','COMPLETED'];
