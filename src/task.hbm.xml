@@ -4,7 +4,7 @@
           "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.marlabs.domain.Task" table="task_list001">
+	<class name="com.marlabs.domain.Task" table="task_list002">
 		<id name="taskId">
 			<generator class="increment"></generator>
 		</id>
